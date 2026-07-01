@@ -1,65 +1,75 @@
 from django.db import models
-
-
-class Company(models.Model):
-    INDUSTRY_CHOICES = [
-        ("IT", "IT"),
-        ("INDUSTRY", "Промышленность"),
-        ("EDUCATION", "Образование"),
-        ("MINING", "Добыча"),
-        ("OTHER", "Другое"),
-    ]
-
-    name = models.CharField(max_length=255)
-    industry = models.CharField(
-        max_length=100,
-        choices=INDUSTRY_CHOICES
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.name
-
+from accounts.models import Company
 
 class Question(models.Model):
-    BLOCK_CHOICES = [
+
+    BLOCKS = (
         ("E", "Environmental"),
         ("S", "Social"),
         ("G", "Governance"),
-    ]
+    )
 
-    TYPE_CHOICES = [
-        ("yes_no", "Да/Нет"),
-        ("single_choice", "Один вариант"),
-        ("scale", "Шкала"),
-    ]
+    TYPES = (
+        ("yes_no", "Yes/No"),
+        ("single_choice", "Single Choice"),
+        ("scale", "Scale"),
+    )
 
     text = models.TextField()
 
     block = models.CharField(
         max_length=1,
-        choices=BLOCK_CHOICES
+        choices=BLOCKS
     )
 
     question_type = models.CharField(
         max_length=20,
-        choices=TYPE_CHOICES
+        choices=TYPES
     )
 
-    weight = models.FloatField(default=1.0)
+    weight = models.FloatField(default=1)
 
-    order = models.IntegerField()
-
-    class Meta:
-        ordering = ["order"]
+    order = models.PositiveIntegerField()
 
     def __str__(self):
-        return self.text[:50]
+        return f"{self.block} - {self.order}"
+
+
+class Result(models.Model):
+
+    LEVELS = (
+        ("beginner", "Beginner"),
+        ("developing", "Developing"),
+        ("advanced", "Advanced"),
+        ("leader", "Leader"),
+    )
+
+    company = models.ForeignKey(
+        Company,
+        on_delete=models.CASCADE,
+        related_name="results"
+    )
+
+    score_e = models.FloatField()
+
+    score_s = models.FloatField()
+
+    score_g = models.FloatField()
+
+    score_total = models.FloatField()
+
+    level = models.CharField(
+        max_length=20,
+        choices=LEVELS
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
 class Answer(models.Model):
-    company = models.ForeignKey(
-        Company,
+
+    result = models.ForeignKey(
+        Result,
         on_delete=models.CASCADE,
         related_name="answers"
     )
@@ -69,59 +79,36 @@ class Answer(models.Model):
         on_delete=models.CASCADE
     )
 
-    value = models.IntegerField()
-
-    def __str__(self):
-        return f"{self.company} - {self.question}"
-
-
-class Result(models.Model):
-    LEVEL_CHOICES = [
-        ("BEGINNER", "Начальный"),
-        ("DEVELOPING", "Развивающийся"),
-        ("ADVANCED", "Продвинутый"),
-        ("LEADER", "Лидер"),
-    ]
-
-    company = models.ForeignKey(
-        Company,
-        on_delete=models.CASCADE,
-        related_name="results"
-    )
-
-    score_e = models.FloatField()
-    score_s = models.FloatField()
-    score_g = models.FloatField()
-
-    score_total = models.FloatField()
-
-    level = models.CharField(
-        max_length=30,
-        choices=LEVEL_CHOICES
-    )
-
-    created_at = models.DateTimeField(
-        auto_now_add=True
-    )
+    value = models.PositiveSmallIntegerField()
 
 
 class Recommendation(models.Model):
-    BLOCK_CHOICES = [
+
+    BLOCKS = (
         ("E", "Environmental"),
         ("S", "Social"),
         ("G", "Governance"),
-    ]
+    )
+
+    LEVELS = (
+        ("beginner", "Beginner"),
+        ("developing", "Developing"),
+        ("advanced", "Advanced"),
+        ("leader", "Leader"),
+    )
 
     block = models.CharField(
         max_length=1,
-        choices=BLOCK_CHOICES
+        choices=BLOCKS
     )
 
     level = models.CharField(
-        max_length=30
+        max_length=20,
+        choices=LEVELS
     )
 
-    text = models.TextField()
+    text_ru = models.TextField()
 
-    def __str__(self):
-        return f"{self.block} - {self.level}"
+    text_kz = models.TextField()
+
+    text_en = models.TextField()
