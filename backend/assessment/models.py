@@ -1,6 +1,4 @@
 from django.db import models
-from django.conf import settings
-from accounts.models import Company
 
 class Question(models.Model):
     class Block(models.TextChoices):
@@ -12,6 +10,8 @@ class Question(models.Model):
         YES_NO = "yes_no", "Yes / No"
         SINGLE_CHOICE = "single_choice", "Single choice"
         SCALE = "scale", "Scale"
+
+    internal_code = models.CharField(max_length=20, unique=True)
 
     text = models.TextField()
     block = models.CharField(max_length=1, choices=Block.choices)
@@ -27,11 +27,7 @@ class Question(models.Model):
 
 
 class Result(models.Model):
-    company = models.ForeignKey(
-        getattr(settings, "COMPANY_MODEL", "accounts.Company"),
-        on_delete=models.CASCADE,
-        related_name="results",
-    )
+    company = models.ForeignKey("accounts.Company", on_delete=models.CASCADE, related_name="results")
 
     score_e = models.FloatField(default=0)
     score_s = models.FloatField(default=0)
@@ -62,9 +58,10 @@ class Recommendation(models.Model):
 
     block = models.CharField(max_length=1, choices=Block.choices)
     level = models.CharField(max_length=32)
-    txt_ru = models.TextField()
-    txt_kz = models.TextField()
-    txt_en = models.TextField()
+
+    text_ru = models.TextField()
+    text_kz = models.TextField(blank=True)
+    text_en = models.TextField(blank=True)
 
     class Meta:
         ordering = ["block", "id"]
