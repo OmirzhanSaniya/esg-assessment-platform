@@ -1,5 +1,5 @@
 from django.db import models
-
+from accounts.models import Company
 class Question(models.Model):
     class Block(models.TextChoices):
         E = "E", "Environmental"
@@ -10,6 +10,7 @@ class Question(models.Model):
         YES_NO = "yes_no", "Yes / No"
         SINGLE_CHOICE = "single_choice", "Single choice"
         SCALE = "scale", "Scale"
+        PERCENT = "percent", "Percent"
 
     internal_code = models.CharField(max_length=20, unique=True)
 
