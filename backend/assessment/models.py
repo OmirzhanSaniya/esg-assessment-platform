@@ -10,6 +10,7 @@ class Question(models.Model):
         YES_NO = "yes_no", "Yes / No"
         SINGLE_CHOICE = "single_choice", "Single choice"
         SCALE = "scale", "Scale"
+        PERCENTAGE = "percentage", "Percentage"
 
     internal_code = models.CharField(max_length=20, unique=True)
     is_controversy = models.BooleanField(default=False)
