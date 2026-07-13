@@ -12,9 +12,11 @@ class Question(models.Model):
         SCALE = "scale", "Scale"
 
     internal_code = models.CharField(max_length=20, unique=True)
+    is_controversy = models.BooleanField(default=False)
+    severity = models.IntegerField(null=True, blank=True)
 
     text = models.TextField()
-    block = models.CharField(max_length=1, choices=Block.choices)
+    block = models.CharField(max_length=1, choices=Block.choices, null=True, blank=True)
     question_type = models.CharField(max_length=32, choices=QuestionType.choices)
     weight = models.FloatField(default=1.0)
     order = models.PositiveIntegerField(default=1)
