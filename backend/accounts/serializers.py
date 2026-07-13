@@ -1,6 +1,9 @@
 from rest_framework import serializers
 from accounts.models import User, Company
 
+from assessment.models import Result
+from assessment.serializers import ResultSerializer
+
 
 class RegisterSerializer(serializers.ModelSerializer):
     company_name = serializers.CharField(max_length=255)
@@ -56,7 +59,6 @@ class CompanySerializer(serializers.ModelSerializer):
             "sub_industry",
         )
 
-
 class ProfileSerializer(serializers.ModelSerializer):
     company = serializers.SerializerMethodField()
 
@@ -72,6 +74,18 @@ class ProfileSerializer(serializers.ModelSerializer):
     def get_company(self, obj):
         try:
             company = obj.company
-            return CompanySerializer(company).data
+
+            latest_result = company.results.first()
+
+            data = CompanySerializer(company).data
+
+            data["current_rating"] = (
+                ResultSerializer(latest_result).data
+                if latest_result
+                else None
+            )
+
+            return data
+
         except Company.DoesNotExist:
             return None

@@ -1,6 +1,15 @@
 from django.urls import path
-from .views import ping
+from .views import QuestionListView, SubmitAssessmentView
+
 
 urlpatterns = [
-    path("ping/", ping),
+    path(
+        "questions/",
+        QuestionListView.as_view()
+    ),
+    path(
+        "submit/",
+        SubmitAssessmentView.as_view(),
+        name="submit"
+    )
 ]
