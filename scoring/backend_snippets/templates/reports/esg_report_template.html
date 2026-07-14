@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+{% load i18n %}
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<style>
+    @page {
+        size: A4;
+        margin: 2cm 1.5cm;
+        @bottom-center {
+            content: "{% trans 'Стр.' %} " counter(page) " {% trans 'из' %} " counter(pages);
+            font-size: 9px;
+            color: #888;
+        }
+    }
+    body {
+        font-family: 'DejaVu Sans', Arial, sans-serif;
+        color: #222;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    h1 { font-size: 22px; margin-bottom: 4px; color: #1a1a1a; }
+    h2 { font-size: 16px; margin-top: 24px; margin-bottom: 8px; color: #1a1a1a; border-bottom: 2px solid #eee; padding-bottom: 4px; }
+    .subtitle { color: #666; font-size: 13px; margin-bottom: 20px; }
+
+    .score-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f5f5f5;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .score-number { font-size: 42px; font-weight: bold; color: #1a1a1a; }
+    .score-tier { font-size: 16px; font-weight: bold; margin-top: 4px; }
+    .tier-1 { color: #1b5e20; }
+    .tier-2 { color: #2e7d32; }
+    .tier-3 { color: #f9a825; }
+    .tier-4 { color: #ef6c00; }
+    .tier-5 { color: #c62828; }
+
+    .chart-img { width: 100%; max-width: 500px; }
+
+    .controversy-box {
+        background: #fdecea;
+        border-left: 4px solid #c62828;
+        border-radius: 4px;
+        padding: 12px 16px;
+        margin-bottom: 10px;
+    }
+    .controversy-severity {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 2px 8px;
+        border-radius: 10px;
+        color: white;
+        margin-right: 8px;
+    }
+    .sev-1 { background: #fbc02d; }
+    .sev-2 { background: #f57c00; }
+    .sev-3 { background: #e64a19; }
+    .sev-4 { background: #b71c1c; }
+
+    .priority-item {
+        background: #fff8e1;
+        border-left: 4px solid #f9a825;
+        border-radius: 4px;
+        padding: 10px 14px;
+        margin-bottom: 8px;
+    }
+    .priority-rank {
+        font-weight: bold;
+        color: #f57c00;
+    }
+
+    .rec-item {
+        border-bottom: 1px solid #eee;
+        padding: 8px 0;
+    }
+    .rec-category {
+        font-weight: bold;
+        font-size: 12px;
+    }
+    .rec-meta {
+        font-size: 10px;
+        color: #888;
+    }
+    .horizon-badge {
+        display: inline-block;
+        font-size: 9px;
+        padding: 2px 8px;
+        border-radius: 10px;
+        background: #e0e0e0;
+        color: #333;
+        margin-left: 6px;
+    }
+
+    .footer-note {
+        margin-top: 30px;
+        font-size: 10px;
+        color: #999;
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+    <h1>{% trans "ESG-отчёт:" %} {{ company_name }}</h1>
+    <div class="subtitle">{% trans "Отрасль:" %} {{ sector_name }}{% if sub_industry_name %} / {{ sub_industry_name }}{% endif %} &nbsp;|&nbsp; {% trans "Дата:" %} {{ generated_date }}</div>
+
+    <div class="score-box">
+        <div>
+            <div class="score-number">{{ esg_final }}</div>
+            <div class="score-tier tier-{{ tier_number }}">{{ tier_label }}</div>
+        </div>
+        <div>
+            <img class="chart-img" src="data:image/png;base64,{{ pillar_chart_base64 }}" alt="{% trans 'Pillar scores' %}">
+        </div>
+    </div>
+
+    {% if conclusion %}
+    <p style="font-size: 13px; color: #333; margin: 0 0 16px 0;">{{ conclusion }}</p>
+    {% endif %}
+
+    {% if controversy_warnings %}
+    <h2>⚠️ {% trans "Контроверсии — требуют внимания" %}</h2>
+    {% for warning in controversy_warnings %}
+    <div class="controversy-box">
+        <span class="controversy-severity sev-{{ warning.severity }}">{% trans "Серьёзность" %} {{ warning.severity }}</span>
+        {{ warning.text }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <h2>{% trans "Баллы по категориям" %}</h2>
+    <img class="chart-img" src="data:image/png;base64,{{ category_chart_base64 }}" alt="{% trans 'Category scores' %}">
+
+    <h2>{% trans "Топ-3 приоритетных действия" %}</h2>
+    {% for action in top_priority_actions %}
+    <div class="priority-item">
+        <span class="priority-rank">#{{ forloop.counter }}</span>
+        <strong>{{ action.category_name }}</strong> ({{ action.score }} {% trans "баллов" %}) &mdash; {{ action.text }}
+    </div>
+    {% endfor %}
+
+    <h2>{% trans "Полный роадмап рекомендаций" %}</h2>
+
+    <h3>{% trans "Быстро (недели)" %}</h3>
+    {% for rec in recommendations_by_horizon.quick %}
+    <div class="rec-item">
+        <div class="rec-category">{{ rec.category_name }} <span class="horizon-badge">{{ rec.score }} {% trans "баллов" %}</span></div>
+        <div>{{ rec.text }}</div>
+    </div>
+    {% empty %}
+    <p class="rec-meta">{% trans "Нет рекомендаций в этой категории горизонта." %}</p>
+    {% endfor %}
+
+    <h3>{% trans "Средне (месяцы)" %}</h3>
+    {% for rec in recommendations_by_horizon.mid %}
+    <div class="rec-item">
+        <div class="rec-category">{{ rec.category_name }} <span class="horizon-badge">{{ rec.score }} {% trans "баллов" %}</span></div>
+        <div>{{ rec.text }}</div>
+    </div>
+    {% empty %}
+    <p class="rec-meta">{% trans "Нет рекомендаций в этой категории горизонта." %}</p>
+    {% endfor %}
+
+    <h3>{% trans "Долго / структурно (год+)" %}</h3>
+    {% for rec in recommendations_by_horizon.long %}
+    <div class="rec-item">
+        <div class="rec-category">{{ rec.category_name }} <span class="horizon-badge">{{ rec.score }} {% trans "баллов" %}</span></div>
+        <div>{{ rec.text }}</div>
+    </div>
+    {% empty %}
+    <p class="rec-meta">{% trans "Нет рекомендаций в этой категории горизонта." %}</p>
+    {% endfor %}
+
+    <div class="footer-note">
+        {% blocktrans %}Отчёт сгенерирован автоматически на основе самооценки ESG-калькулятора. Методология синтезирует подходы LSEG, MSCI, S&amp;P Global, Sustainalytics и Sustainable Fitch.{% endblocktrans %}
+    </div>
+
+</body>
+</html>
