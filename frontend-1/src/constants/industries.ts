@@ -1,4 +1,4 @@
-import type { Sector, SubIndustry } from '../types' ;
+import type { Sector, SubIndustry } from '../types';
 
 export const SECTORS: Sector[] = [
   { sector_id: 'energy', sector_name: 'Энергетика (нефть, газ, уголь)', has_subindustries: true },
