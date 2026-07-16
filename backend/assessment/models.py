@@ -26,7 +26,7 @@ class Question(models.Model):
         ordering = ["block", "order"]
 
     def __str__(self):
-        return f"{self.block}{self.order}. {self.text[:50]}"
+        return f"{self.internal_code}. {self.text[:50]}"
 
 
 class Result(models.Model):
