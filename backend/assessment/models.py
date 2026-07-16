@@ -10,12 +10,14 @@ class Question(models.Model):
         YES_NO = "yes_no", "Yes / No"
         SINGLE_CHOICE = "single_choice", "Single choice"
         SCALE = "scale", "Scale"
-        PERCENT = "percent", "Percent"
+        PERCENTAGE = "percentage", "Percentage"
 
     internal_code = models.CharField(max_length=20, unique=True)
+    is_controversy = models.BooleanField(default=False)
+    severity = models.IntegerField(null=True, blank=True)
 
     text = models.TextField()
-    block = models.CharField(max_length=1, choices=Block.choices)
+    block = models.CharField(max_length=1, choices=Block.choices, null=True, blank=True)
     question_type = models.CharField(max_length=32, choices=QuestionType.choices)
     weight = models.FloatField(default=1.0)
     order = models.PositiveIntegerField(default=1)
@@ -24,7 +26,7 @@ class Question(models.Model):
         ordering = ["block", "order"]
 
     def __str__(self):
-        return f"{self.block}{self.order}. {self.text[:50]}"
+        return f"{self.internal_code}. {self.text[:50]}"
 
 
 class Result(models.Model):
