@@ -1,0 +1,54 @@
+/* ============================================================
+   Auth — page shell
+   ============================================================ */
+
+   .auth-page {
+    --auth-red: #ef4444;
+    --auth-red-soft: #fef2f2;
+    --auth-green-soft: #ecfdf5;
+  
+    min-height: 100vh;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+  }
+  
+  .auth-blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(80px);
+    pointer-events: none;
+    animation: auth-drift 20s ease-in-out infinite;
+  }
+  
+  .auth-blob.blob1 {
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #a8edca, #2ecc71);
+  }
+  
+  .auth-blob.blob2 {
+    bottom: -80px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #c7d2fe, #818cf8);
+    animation-delay: -8s;
+  }
+  
+  @keyframes auth-drift {
+    0%,
+    100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -16px) scale(1.05); }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .auth-blob { animation: none; }
+  }
