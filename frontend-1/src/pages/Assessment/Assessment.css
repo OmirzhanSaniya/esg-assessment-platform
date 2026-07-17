@@ -203,4 +203,32 @@
         margin-top: 8px;
         font-size: 13px;
         color: #ef4444;
-      }         
+      }    
+/* ============================================
+      LOADING
+      ============================================ */
+   
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        height: 100vh;
+        font-size: 16px;
+        color: var(--gray);
+      }
+      
+      .loading::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--border);
+        border-top-color: var(--green);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+                 
