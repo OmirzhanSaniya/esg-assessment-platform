@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { authAPI } from '../../api/client';
@@ -244,3 +244,191 @@ function PasswordStrengthMeter({ password }: { password: string }) {
       </div>
     );
   }
+/* ==================================================================
+   REGISTER
+   ================================================================== */
+
+   interface RegisterForm {
+    company_name: string;
+    industry: string;
+    email: string;
+    password: string;
+  }
+  
+  type RegisterErrors = Partial<Record<keyof RegisterForm | 'terms', string>>;
+  
+  export function Register() {
+    const [form, setForm] = useState<RegisterForm>({ company_name: '', industry: '', email: '', password: '' });
+    const [agreedToTerms, setAgreedToTerms] = useState(false);
+    const [subIndustryId, setSubIndustryId] = useState('');
+    const [fieldErrors, setFieldErrors] = useState<RegisterErrors>({});
+    const [formError, setFormError] = useState('');
+    const [loading, setLoading] = useState(false);
+  
+    const { login } = useAuth();
+    const navigate = useNavigate();
+  
+    const selectedSector = SECTORS.find((s) => s.sector_id === form.industry);
+    const availableSubIndustries = SUB_INDUSTRIES.filter((si) => si.sector_id === form.industry);
+  
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      const { name, value } = e.target;
+      setForm((prev) => ({ ...prev, [name]: value }));
+      setFieldErrors((prev) => ({ ...prev, [name]: undefined }));
+      if (name === 'industry') {
+        setSubIndustryId('');
+      }
+    };
+  
+    const handleSubIndustryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setSubIndustryId(e.target.value);
+    };
+  
+    const validate = (): boolean => {
+      const errors: RegisterErrors = {};
+      if (form.company_name.trim().length < 2) errors.company_name = 'Укажите название компании';
+      if (!form.industry) errors.industry = 'Выберите отрасль';
+      if (!EMAIL_RE.test(form.email)) errors.email = 'Введите корректный email';
+      if (form.password.length < 8) errors.password = 'Минимум 8 символов';
+      if (!agreedToTerms) errors.terms = 'Нужно согласиться с условиями';
+  
+      setFieldErrors(errors);
+      return Object.keys(errors).length === 0;
+    };
+  
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setFormError('');
+      if (!validate()) return;
+  
+      setLoading(true);
+      try {
+        const payload = {
+          ...form,
+          ...(subIndustryId ? { sub_industry: subIndustryId } : {}),
+        };
+        await authAPI.register(payload);
+        await login(form.email, form.password);
+        navigate('/dashboard');
+      } catch {
+        setFormError('Ошибка регистрации. Попробуйте другой email.');
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    return (
+      <div className="auth-page">
+        <div className="auth-blob blob1" />
+        <div className="auth-blob blob2" />
+        <div className="auth-card">
+          <Link to="/" className="auth-logo">
+            ESG<span>Campus</span>
+          </Link>
+          <h1>Регистрация</h1>
+          <p className="auth-sub">Создайте аккаунт вашей компании</p>
+  
+          {formError && (
+            <div className="auth-banner error">
+              <AlertIcon />
+              <span>{formError}</span>
+            </div>
+          )}
+  
+          <form onSubmit={handleSubmit} noValidate>
+            <div className={`field ${fieldErrors.company_name ? 'has-error' : ''}`}>
+              <label htmlFor="reg-company">Название компании</label>
+              <input
+                id="reg-company"
+                name="company_name"
+                value={form.company_name}
+                onChange={handleChange}
+                placeholder="ТОО Пример"
+              />
+              <FieldError message={fieldErrors.company_name} />
+            </div>
+  
+            <div className={`field ${fieldErrors.industry ? 'has-error' : ''}`}>
+              <label htmlFor="reg-industry">Отрасль</label>
+              <select id="reg-industry" name="industry" value={form.industry} onChange={handleChange}>
+                <option value="">Выберите отрасль</option>
+                {SECTORS.map((sector) => (
+                  <option key={sector.sector_id} value={sector.sector_id}>
+                    {sector.sector_name}
+                  </option>
+                ))}
+              </select>
+              <FieldError message={fieldErrors.industry} />
+            </div>
+  
+            {selectedSector?.has_subindustries && (
+              <div className="field">
+                <label htmlFor="reg-sub-industry">Под-отрасль</label>
+                <select id="reg-sub-industry" value={subIndustryId} onChange={handleSubIndustryChange}>
+                  <option value="">Выберите под-отрасль</option>
+                  {availableSubIndustries.map((si) => (
+                    <option key={si.sub_industry_id ?? 'other'} value={si.sub_industry_id ?? ''}>
+                      {si.sub_industry_name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+            <div className={`field ${fieldErrors.email ? 'has-error' : ''}`}>
+              <label htmlFor="reg-email">Email</label>
+              <input
+                id="reg-email"
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="company@example.com"
+              />
+              <FieldError message={fieldErrors.email} />
+            </div>
+  
+            <div className={`field ${fieldErrors.password ? 'has-error' : ''}`}>
+              <label htmlFor="reg-password">Пароль</label>
+              <PasswordInput
+                id="reg-password"
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+                placeholder="Минимум 8 символов"
+                minLength={8}
+              />
+              <PasswordStrengthMeter password={form.password} />
+              <FieldError message={fieldErrors.password} />
+            </div>
+  
+            <label className="field-checkbox">
+              <input
+                type="checkbox"
+                checked={agreedToTerms}
+                onChange={(e) => {
+                  setAgreedToTerms(e.target.checked);
+                  setFieldErrors((prev) => ({ ...prev, terms: undefined }));
+                }}
+              />
+              <span>
+                Согласен с <Link to="/terms">условиями использования</Link> и{' '}
+                <Link to="/privacy">политикой конфиденциальности</Link>
+              </span>
+            </label>
+            <FieldError message={fieldErrors.terms} className="field-error--tight" />
+  
+            <button type="submit" className="btn btn-primary auth-btn" disabled={loading}>
+              {loading && <span className="spinner" />}
+              {loading ? 'Создаём аккаунт...' : 'Зарегистрироваться'}
+            </button>
+          </form>
+  
+          <p className="auth-switch">
+            Уже есть аккаунт? <Link to="/login">Войти</Link>
+          </p>
+        </div>
+      </div>
+    );
+  }
+  
+  export default Login;
