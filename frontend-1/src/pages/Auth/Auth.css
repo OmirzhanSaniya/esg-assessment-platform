@@ -229,4 +229,51 @@
       
       .forgot-link { font-size: 13px; font-weight: 600; color: var(--green); text-decoration: none; }
       .forgot-link:hover { text-decoration: underline; }
-               
+ /* ============================================================
+     Buttons + banners
+     ============================================================ */
+  
+     .auth-btn {
+        width: 100%;
+        height: 46px;
+        margin-top: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-align: center;
+        font-weight: 700;
+        border-radius: 10px;
+        transition: transform 0.1s ease, background 0.15s ease, box-shadow 0.15s ease;
+      }
+      .auth-btn:active { transform: translateY(1px); }
+      .auth-btn:disabled { opacity: 0.6; cursor: not-allowed; pointer-events: none; }
+      
+      .auth-btn .spinner {
+        width: 15px;
+        height: 15px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-top-color: white;
+        border-radius: 50%;
+        animation: auth-spin 0.7s linear infinite;
+      }
+      
+      @keyframes auth-spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      .auth-banner {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        margin-bottom: 20px;
+        padding: 12px 14px;
+        font-size: 13.5px;
+        font-weight: 500;
+        line-height: 1.5;
+        border-radius: 10px;
+      }
+      .auth-banner svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; }
+      .auth-banner.error { background: var(--auth-red-soft); color: var(--auth-red); }
+      .auth-banner.success { background: var(--auth-green-soft); color: var(--green-dark, #047857); }
+                    
