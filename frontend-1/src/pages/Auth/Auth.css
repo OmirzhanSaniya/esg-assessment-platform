@@ -81,4 +81,115 @@
       
       .auth-card h1 { margin: 0 0 6px; font-size: 26px; font-weight: 800; }
       .auth-sub { margin: 0 0 28px; font-size: 14px; line-height: 1.5; color: var(--gray); }
-      
+  /* ============================================================
+     Fields
+     ============================================================ */
+  
+     .field { margin-bottom: 16px; }
+  
+     .field label {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       margin-bottom: 6px;
+       font-size: 13px;
+       font-weight: 600;
+       color: var(--navy);
+     }
+     
+     .field-optional { font-size: 12px; font-weight: 500; color: var(--gray); }
+     .field-input-wrap { position: relative; }
+     
+     .field input,
+     .field select {
+       width: 100%;
+       height: 44px;
+       padding: 0 14px;
+       font-size: 14.5px;
+       color: var(--navy);
+       background: white;
+       border: 1.5px solid var(--border);
+       border-radius: 10px;
+       transition: border-color 0.15s ease, box-shadow 0.15s ease;
+     }
+     
+     .field input::placeholder { color: #a1a8a6; }
+     .field input:hover,
+     .field select:hover { border-color: #c4c9c4; }
+     
+     .field input:focus,
+     .field select:focus {
+       outline: none;
+       border-color: var(--green);
+       box-shadow: 0 0 0 3px var(--auth-green-soft);
+     }
+     
+     .field input:disabled {
+       color: var(--gray);
+       background: #f5f6f4;
+       cursor: not-allowed;
+     }
+     
+     .field.has-error input { background: var(--auth-red-soft); border-color: var(--auth-red); }
+     .field.has-error input:focus { box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12); }
+     .field.has-success input { border-color: var(--green); }
+     
+     .field-error {
+       display: flex;
+       align-items: center;
+       gap: 5px;
+       margin-top: 6px;
+       font-size: 12.5px;
+       font-weight: 500;
+       color: var(--auth-red);
+     }
+     .field-error svg { width: 13px; height: 13px; flex-shrink: 0; }
+     .field-error--tight { margin-top: -12px; margin-bottom: 12px; }
+     
+     .field-hint { margin-top: 6px; font-size: 12px; color: var(--gray); }
+     
+     /* Password field with show/hide toggle */
+     
+     .field-input-wrap .toggle-visibility {
+       position: absolute;
+       top: 50%;
+       right: 4px;
+       transform: translateY(-50%);
+       width: 36px;
+       height: 36px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       border: none;
+       border-radius: 8px;
+       background: none;
+       color: var(--gray);
+       cursor: pointer;
+       transition: color 0.15s, background 0.15s;
+     }
+     .field-input-wrap .toggle-visibility:hover { color: var(--navy); background: #f5f6f4; }
+     .field-input-wrap .toggle-visibility:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+     .field-input-wrap .toggle-visibility svg { width: 18px; height: 18px; }
+     
+     .field-input-wrap input[type='password'],
+     .field-input-wrap input[type='text'].has-toggle { padding-right: 42px; }
+     
+     /* Password strength meter */
+     
+     .password-strength { display: flex; gap: 4px; margin-top: 8px; }
+     
+     .password-strength-bar {
+       flex: 1;
+       height: 4px;
+       border-radius: 100px;
+       background: var(--border);
+       transition: background 0.2s ease;
+     }
+     
+     .password-strength[data-level='1'] .password-strength-bar:nth-child(1) { background: var(--auth-red); }
+     .password-strength[data-level='2'] .password-strength-bar:nth-child(-n+2) { background: #f59e0b; }
+     .password-strength[data-level='3'] .password-strength-bar:nth-child(-n+3) { background: #eab308; }
+     .password-strength[data-level='4'] .password-strength-bar { background: var(--green); }
+     
+     .password-strength-label { margin-top: 6px; font-size: 12px; color: var(--gray); }
+          
