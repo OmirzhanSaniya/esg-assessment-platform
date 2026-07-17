@@ -192,4 +192,41 @@
      .password-strength[data-level='4'] .password-strength-bar { background: var(--green); }
      
      .password-strength-label { margin-top: 6px; font-size: 12px; color: var(--gray); }
-          
+/* ============================================================
+     Checkbox (remember me / terms agreement)
+     ============================================================ */
+  
+     .field-checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        margin-bottom: 20px;
+        font-size: 13.5px;
+        line-height: 1.5;
+        color: var(--navy);
+        cursor: pointer;
+      }
+      
+      .field-checkbox input {
+        flex-shrink: 0;
+        width: 17px;
+        height: 17px;
+        margin-top: 1px;
+        accent-color: var(--green);
+        cursor: pointer;
+      }
+      
+      .field-checkbox a { font-weight: 600; color: var(--green); text-decoration: none; }
+      .field-checkbox a:hover { text-decoration: underline; }
+      .field-checkbox--inline { margin-bottom: 0; }
+      
+      .row-between {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: -6px 0 20px;
+      }
+      
+      .forgot-link { font-size: 13px; font-weight: 600; color: var(--green); text-decoration: none; }
+      .forgot-link:hover { text-decoration: underline; }
+               
