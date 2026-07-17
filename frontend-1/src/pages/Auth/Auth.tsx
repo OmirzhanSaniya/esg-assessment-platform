@@ -135,3 +135,112 @@ function PasswordStrengthMeter({ password }: { password: string }) {
     </>
   );
 }
+/* ==================================================================
+   LOGIN
+   ================================================================== */
+
+   export function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [remember, setRemember] = useState(true);
+    const [fieldErrors, setFieldErrors] = useState<{ email?: string; password?: string }>({});
+    const [formError, setFormError] = useState('');
+    const [loading, setLoading] = useState(false);
+  
+    const { login } = useAuth();
+    const navigate = useNavigate();
+  
+    const validate = () => {
+      const errors: typeof fieldErrors = {};
+      if (!EMAIL_RE.test(email)) errors.email = 'Введите корректный email';
+      if (!password) errors.password = 'Введите пароль';
+      setFieldErrors(errors);
+      return Object.keys(errors).length === 0;
+    };
+  
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setFormError('');
+      if (!validate()) return;
+  
+      setLoading(true);
+      try {
+        await login(email, password);
+        if (remember) {
+          localStorage.setItem('esg_remember_email', email);
+        } else {
+          localStorage.removeItem('esg_remember_email');
+        }
+        navigate('/dashboard');
+      } catch {
+        setFormError('Неверный email или пароль');
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    return (
+      <div className="auth-page">
+        <div className="auth-blob blob1" />
+        <div className="auth-blob blob2" />
+        <div className="auth-card">
+          <Link to="/" className="auth-logo">
+            ESG<span>Campus</span>
+          </Link>
+          <h1>Войти</h1>
+          <p className="auth-sub">Введите данные вашей компании</p>
+  
+          {formError && (
+            <div className="auth-banner error">
+              <AlertIcon />
+              <span>{formError}</span>
+            </div>
+          )}
+  
+          <form onSubmit={handleSubmit} noValidate>
+            <div className={`field ${fieldErrors.email ? 'has-error' : ''}`}>
+              <label htmlFor="login-email">Email</label>
+              <input
+                id="login-email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="company@example.com"
+              />
+              <FieldError message={fieldErrors.email} />
+            </div>
+  
+            <div className={`field ${fieldErrors.password ? 'has-error' : ''}`}>
+              <label htmlFor="login-password">Пароль</label>
+              <PasswordInput
+                id="login-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+              />
+              <FieldError message={fieldErrors.password} />
+            </div>
+  
+            <div className="row-between">
+              <label className="field-checkbox field-checkbox--inline">
+                <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} />
+                Запомнить меня
+              </label>
+              <Link to="/forgot-password" className="forgot-link">
+                Забыли пароль?
+              </Link>
+            </div>
+  
+            <button type="submit" className="btn btn-primary auth-btn" disabled={loading}>
+              {loading && <span className="spinner" />}
+              {loading ? 'Входим...' : 'Войти'}
+            </button>
+          </form>
+  
+          <p className="auth-switch">
+            Нет аккаунта? <Link to="/register">Зарегистрироваться</Link>
+          </p>
+        </div>
+      </div>
+    );
+  }
