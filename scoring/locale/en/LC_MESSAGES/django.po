@@ -1,0 +1,496 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ESG Assessment Platform 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-14 00:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "Энергетика (нефть, газ, уголь)"
+msgstr "Energy (oil, gas, coal)"
+
+msgid "Добывающая промышленность и металлургия"
+msgstr "Mining and Metallurgy"
+
+msgid "Коммунальные услуги (Utilities)"
+msgstr "Utilities"
+
+msgid "Промышленное производство"
+msgstr "Manufacturing"
+
+msgid "Строительство и недвижимость"
+msgstr "Construction and Real Estate"
+
+msgid "Транспорт и логистика"
+msgstr "Transport and Logistics"
+
+msgid "Финансовые услуги"
+msgstr "Financial Services"
+
+msgid "Технологии и ПО"
+msgstr "Technology and Software"
+
+msgid "Телекоммуникации и медиа"
+msgstr "Telecommunications and Media"
+
+msgid "Ритейл и товары народного потребления"
+msgstr "Retail and Consumer Goods"
+
+msgid "Здравоохранение и фармацевтика"
+msgstr "Healthcare and Pharmaceuticals"
+
+msgid "Сельское хозяйство и производство продуктов питания"
+msgstr "Agriculture and Food Production"
+
+msgid "Профессиональные услуги / образование / консалтинг"
+msgstr "Professional Services / Education / Consulting"
+
+msgid "Прочее"
+msgstr "Other"
+
+msgid "Нефть и газ (добыча/переработка)"
+msgstr "Oil and Gas (Extraction/Refining)"
+
+msgid "Уголь"
+msgstr "Coal"
+
+msgid "Возобновляемая энергетика"
+msgstr "Renewable Energy"
+
+msgid "Горнодобыча (металлы/руды)"
+msgstr "Mining (Metals/Ores)"
+
+msgid "Металлургия/сталь"
+msgstr "Metallurgy/Steel"
+
+msgid "Химическая промышленность"
+msgstr "Chemical Industry"
+
+msgid "Электроэнергетика"
+msgstr "Electric Power"
+
+msgid "Водоснабжение и водоотведение"
+msgstr "Water Supply and Sanitation"
+
+msgid "Машиностроение"
+msgstr "Machine Building"
+
+msgid "Автомобилестроение"
+msgstr "Automotive Manufacturing"
+
+msgid "Аэрокосмическая и оборонная промышленность"
+msgstr "Aerospace and Defense Industry"
+
+msgid "Девелопмент жилой недвижимости"
+msgstr "Residential Real Estate Development"
+
+msgid "Коммерческое строительство"
+msgstr "Commercial Construction"
+
+msgid "Авиаперевозки"
+msgstr "Air Transport"
+
+msgid "Морские и железнодорожные перевозки"
+msgstr "Maritime and Rail Transport"
+
+msgid "Логистика и курьерские услуги"
+msgstr "Logistics and Courier Services"
+
+msgid "Банки"
+msgstr "Banks"
+
+msgid "Страхование"
+msgstr "Insurance"
+
+msgid "Инвестфонды и управление активами"
+msgstr "Investment Funds and Asset Management"
+
+msgid "Разработка ПО / SaaS"
+msgstr "Software Development / SaaS"
+
+msgid "Производство электроники / хардвер"
+msgstr "Electronics Manufacturing / Hardware"
+
+msgid "Полупроводники"
+msgstr "Semiconductors"
+
+msgid "Телеком-операторы"
+msgstr "Telecom Operators"
+
+msgid "Медиа и контент"
+msgstr "Media and Content"
+
+msgid "Розничная торговля (офлайн/онлайн)"
+msgstr "Retail Trade (Offline/Online)"
+
+msgid "Производство одежды и текстиля"
+msgstr "Apparel and Textile Manufacturing"
+
+msgid "Продукты питания и напитки"
+msgstr "Food and Beverages"
+
+msgid "Фармацевтика"
+msgstr "Pharmaceuticals"
+
+msgid "Медицинские услуги / клиники"
+msgstr "Medical Services / Clinics"
+
+msgid "Биотехнологии"
+msgstr "Biotechnology"
+
+msgid "Растениеводство"
+msgstr "Crop Farming"
+
+msgid "Животноводство"
+msgstr "Livestock Farming"
+
+msgid "Рыболовство и аквакультура"
+msgstr "Fishing and Aquaculture"
+
+msgid "Есть ли у компании формализованная политика энергоэффективности?"
+msgstr "Does the company have a formalized energy efficiency policy?"
+
+msgid "Какая доля потребляемой энергии приходится на возобновляемые источники?"
+msgstr "What share of energy consumed comes from renewable sources?"
+
+msgid "Ведётся ли систематический учёт водопотребления?"
+msgstr "Is water consumption systematically tracked?"
+
+msgid "Есть ли программа снижения материалоёмкости производства/услуг?"
+msgstr "Is there a program to reduce the material intensity of production/services?"
+
+msgid "Ведётся ли учёт выбросов парниковых газов (Scope 1 и 2)?"
+msgstr "Are greenhouse gas emissions tracked (Scope 1 and 2)?"
+
+msgid "Есть ли у компании публично заявленная цель по снижению выбросов?"
+msgstr "Does the company have a publicly stated emissions reduction target?"
+
+msgid "Есть ли программа управления отходами (переработка, снижение отходов)?"
+msgstr "Is there a waste management program (recycling, waste reduction)?"
+
+msgid "Проводится ли оценка воздействия деятельности на биоразнообразие?"
+msgstr "Is the impact of operations on biodiversity assessed?"
+
+msgid "Какая доля выручки приходится на «зелёные» продукты/услуги?"
+msgstr "What share of revenue comes from \"green\" products/services?"
+
+msgid "Инвестирует ли компания в R&D, направленный на снижение экологического воздействия?"
+msgstr "Does the company invest in R&D aimed at reducing environmental impact?"
+
+msgid "Есть ли формализованная система охраны труда и техники безопасности?"
+msgstr "Is there a formalized occupational health and safety system?"
+
+msgid "Какой процент сотрудников проходит регулярное профессиональное обучение?"
+msgstr "What percentage of employees undergo regular professional training?"
+
+msgid "Публикует ли компания данные по текучести кадров?"
+msgstr "Does the company publish employee turnover data?"
+
+msgid "Есть ли политика по гендерному/диверсити балансу в найме?"
+msgstr "Is there a gender/diversity balance policy in hiring?"
+
+msgid "Есть ли формализованная политика по правам человека?"
+msgstr "Is there a formalized human rights policy?"
+
+msgid "Проводится ли due diligence поставщиков на предмет трудовых/экологических практик?"
+msgstr "Is supplier due diligence conducted regarding labor/environmental practices?"
+
+msgid "Есть ли механизм подачи жалоб для сотрудников/поставщиков (whistleblowing)?"
+msgstr "Is there a complaint mechanism for employees/suppliers (whistleblowing)?"
+
+msgid "Инвестирует ли компания в локальные сообщества (программы, гранты, партнёрства)?"
+msgstr "Does the company invest in local communities (programs, grants, partnerships)?"
+
+msgid "Оценивается ли социальное воздействие деятельности компании на местные сообщества?"
+msgstr "Is the social impact of the company's activities on local communities assessed?"
+
+msgid "Есть ли формализованная система контроля качества и безопасности продукции?"
+msgstr "Is there a formalized product quality and safety control system?"
+
+msgid "Есть ли политика защиты персональных данных клиентов?"
+msgstr "Is there a customer personal data protection policy?"
+
+msgid "Проводится ли проверка маркетинговых материалов на предмет вводящих в заблуждение заявлений?"
+msgstr "Are marketing materials reviewed for misleading claims?"
+
+msgid "Какая доля независимых директоров в составе совета?"
+msgstr "What share of the board consists of independent directors?"
+
+msgid "Есть ли комитет по устойчивому развитию/ESG на уровне совета директоров?"
+msgstr "Is there a sustainability/ESG committee at the board level?"
+
+msgid "Какая доля женщин в составе совета директоров?"
+msgstr "What share of the board of directors consists of women?"
+
+msgid "Обеспечено ли равное право голоса для всех акционеров (один голос — одна акция)?"
+msgstr "Is equal voting right ensured for all shareholders (one share, one vote)?"
+
+msgid "Есть ли прозрачная политика вознаграждения руководства, привязанная к ESG-показателям?"
+msgstr "Is there a transparent executive compensation policy linked to ESG metrics?"
+
+msgid "Есть ли формализованная антикоррупционная политика?"
+msgstr "Is there a formalized anti-corruption policy?"
+
+msgid "Публикует ли компания ежегодный ESG/устойчивый отчёт?"
+msgstr "Does the company publish an annual ESG/sustainability report?"
+
+msgid "Есть ли независимая верификация ESG-отчётности третьей стороной?"
+msgstr "Is there independent third-party verification of ESG reporting?"
+
+msgid "Компания вовлечена в производство спорных видов вооружений"
+msgstr "The company is involved in the production of controversial weapons"
+
+msgid "Более 30% выручки — тепловой уголь / нефтеносные пески"
+msgstr "More than 30% of revenue comes from thermal coal / oil sands"
+
+msgid "Доказанные системные нарушения прав человека в цепочке поставок"
+msgstr "Proven systemic human rights violations in the supply chain"
+
+msgid "Крупные штрафы регулятора за экологические нарушения за последние 3 года"
+msgstr "Major regulatory fines for environmental violations in the past 3 years"
+
+msgid "Судимость/санкции руководства за коррупцию за последние 5 лет"
+msgstr "Management convictions/sanctions for corruption in the past 5 years"
+
+msgid "Крупная утечка персональных данных клиентов за последний год"
+msgstr "A major customer personal data breach in the past year"
+
+msgid "Массовые трудовые споры / забастовки, связанные с условиями труда"
+msgstr "Mass labor disputes / strikes related to working conditions"
+
+msgid "Отсутствие какой-либо экологической политики при высокой материальности E для отрасли"
+msgstr "Absence of any environmental policy despite high E materiality for the industry"
+
+msgid "Ресурсопользование"
+msgstr "Resource Use"
+
+msgid "Выбросы и отходы"
+msgstr "Emissions and Waste"
+
+msgid "Экологические инновации"
+msgstr "Environmental Innovation"
+
+msgid "Персонал"
+msgstr "Workforce"
+
+msgid "Права человека и цепочка поставок"
+msgstr "Human Rights and Supply Chain"
+
+msgid "Сообщество"
+msgstr "Community"
+
+msgid "Ответственность за продукт"
+msgstr "Product Responsibility"
+
+msgid "Менеджмент"
+msgstr "Management"
+
+msgid "Права акционеров"
+msgstr "Shareholder Rights"
+
+msgid "CSR-стратегия и этика"
+msgstr "CSR Strategy and Ethics"
+
+msgid "Тир 1 — Лидирующий"
+msgstr "Tier 1 — Leading"
+
+msgid "Тир 2 — Продвинутый"
+msgstr "Tier 2 — Advanced"
+
+msgid "Тир 3 — Развивающийся"
+msgstr "Tier 3 — Developing"
+
+msgid "Тир 4 — Базовый"
+msgstr "Tier 4 — Basic"
+
+msgid "Тир 5 — Отстающий / высокий риск"
+msgstr "Tier 5 — Lagging / High Risk"
+
+msgid "Быстро (недели)"
+msgstr "Quick (weeks)"
+
+msgid "Средне (месяцы)"
+msgstr "Medium-term (months)"
+
+msgid "Долго / структурно (год+)"
+msgstr "Long-term / structural (1 year+)"
+
+msgid "Формализуйте политику энергоэффективности и начните систематический учёт потребления энергии, воды и материалов — сейчас практика отсутствует полностью."
+msgstr "Formalize an energy efficiency policy and start systematically tracking energy, water, and material consumption — this practice is currently completely absent."
+
+msgid "Переведите план по энергоэффективности из намерения в задокументированную политику с конкретными шагами и ответственными."
+msgstr "Turn your energy efficiency intentions into a documented policy with concrete steps and responsible owners."
+
+msgid "Существующая программа ресурсоэффективности внедрена частично — усильте её количественными целями (например, % снижения потребления энергии/воды в год)."
+msgstr "The existing resource efficiency program is only partially implemented — strengthen it with quantitative targets (e.g., % reduction in energy/water consumption per year)."
+
+msgid "Начните вести учёт выбросов парниковых газов (Scope 1 и 2) — без базовой линии невозможно ставить цели по снижению."
+msgstr "Start tracking greenhouse gas emissions (Scope 1 and 2) — without a baseline, setting reduction targets is impossible."
+
+msgid "Учёт выбросов есть в зачаточном виде — установите публично заявленную количественную цель по снижению на 3–5 лет."
+msgstr "Emissions tracking exists in a nascent form — set a publicly stated quantitative reduction target for 3–5 years."
+
+msgid "Программа управления выбросами и отходами частично внедрена — добавьте оценку воздействия на биоразнообразие и переработку отходов."
+msgstr "The emissions and waste management program is partially implemented — add biodiversity impact assessment and waste recycling."
+
+msgid "Начните инвестировать в R&D, направленный на снижение экологического воздействия продуктов/услуг."
+msgstr "Start investing in R&D aimed at reducing the environmental impact of products/services."
+
+msgid "Доля «зелёной» выручки минимальна — определите, какие продукты/услуги можно классифицировать как экологичные, и увеличивайте их долю."
+msgstr "The share of \"green\" revenue is minimal — identify which products/services can be classified as environmentally friendly and increase their share."
+
+msgid "Экологические инновации есть, но не систематизированы — оформите отдельную R&D-стратегию с измеримыми целями по зелёной выручке."
+msgstr "Environmental innovations exist but are not systematized — formalize a dedicated R&D strategy with measurable green revenue targets."
+
+msgid "Внедрите формализованную систему охраны труда и техники безопасности — это база, без которой остальные S-метрики не имеют смысла."
+msgstr "Implement a formalized occupational health and safety system — this is the foundation without which other S metrics don't matter."
+
+msgid "Система охраны труда в начальной стадии — добавьте регулярное обучение персонала и начните публиковать данные по текучести кадров."
+msgstr "The occupational safety system is at an early stage — add regular staff training and start publishing turnover data."
+
+msgid "Практики по персоналу внедрены частично — усильте политику диверсити в найме и расширьте охват обучения."
+msgstr "Workforce practices are partially implemented — strengthen diversity hiring policy and expand training coverage."
+
+msgid "Разработайте формализованную политику по правам человека и начните due diligence поставщиков — сейчас проверка цепочки поставок не проводится."
+msgstr "Develop a formalized human rights policy and start supplier due diligence — supply chain checks are currently not conducted."
+
+msgid "Политика по правам человека есть, но due diligence поставщиков не систематизирован — внедрите регулярный аудит ключевых поставщиков."
+msgstr "A human rights policy exists, but supplier due diligence is not systematized — implement regular audits of key suppliers."
+
+msgid "Due diligence поставщиков частично внедрён — добавьте механизм подачи жалоб (whistleblowing) для сотрудников и поставщиков."
+msgstr "Supplier due diligence is partially implemented — add a complaint mechanism (whistleblowing) for employees and suppliers."
+
+msgid "Начните инвестировать в локальные сообщества — программы, гранты или партнёрства с местными организациями."
+msgstr "Start investing in local communities — programs, grants, or partnerships with local organizations."
+
+msgid "Взаимодействие с сообществом эпизодическое — сформируйте регулярную программу с измеримым бюджетом."
+msgstr "Community engagement is episodic — establish a regular program with a measurable budget."
+
+msgid "Программы для сообщества есть — добавьте оценку их социального воздействия, чтобы показывать результат, а не только факт участия."
+msgstr "Community programs exist — add an assessment of their social impact to demonstrate results, not just participation."
+
+msgid "Внедрите систему контроля качества и безопасности продукции, а также политику защиты персональных данных клиентов."
+msgstr "Implement a product quality and safety control system, as well as a customer personal data protection policy."
+
+msgid "Базовые практики есть, но не задокументированы — формализуйте политику защиты данных и контроля качества."
+msgstr "Basic practices exist but are not documented — formalize data protection and quality control policies."
+
+msgid "Ответственность за продукт внедрена частично — добавьте проверку маркетинговых материалов на предмет вводящих в заблуждение заявлений."
+msgstr "Product responsibility is partially implemented — add a review of marketing materials for misleading claims."
+
+msgid "Пересмотрите структуру совета директоров — увеличьте долю независимых директоров и создайте ESG-комитет на уровне совета."
+msgstr "Revise the board structure — increase the share of independent directors and create an ESG committee at the board level."
+
+msgid "Совет директоров частично соответствует практикам управления — увеличьте гендерное разнообразие и независимость состава."
+msgstr "The board of directors partially meets governance practices — increase gender diversity and the independence of its composition."
+
+msgid "Структура управления в целом развита — для дальнейшего роста добавьте формальный ESG-комитет, если его ещё нет."
+msgstr "The governance structure is generally well developed — for further improvement, add a formal ESG committee if one doesn't exist yet."
+
+msgid "Обеспечьте равные права голоса для всех акционеров и разработайте прозрачную политику вознаграждения руководства."
+msgstr "Ensure equal voting rights for all shareholders and develop a transparent executive compensation policy."
+
+msgid "Права акционеров частично защищены — привяжите вознаграждение руководства к измеримым ESG-показателям."
+msgstr "Shareholder rights are partially protected — link executive compensation to measurable ESG metrics."
+
+msgid "Практики в целом соответствуют стандартам — для лидирующего уровня добавьте более детальное раскрытие политики вознаграждения."
+msgstr "Practices generally meet standards — for a leading level, add more detailed disclosure of the compensation policy."
+
+msgid "Разработайте формализованную антикоррупционную политику и начните публиковать ежегодный ESG-отчёт."
+msgstr "Develop a formalized anti-corruption policy and start publishing an annual ESG report."
+
+msgid "ESG-отчётность существует в базовом виде — добавьте независимую верификацию отчёта третьей стороной."
+msgstr "ESG reporting exists in a basic form — add independent third-party verification of the report."
+
+msgid "CSR-стратегия развита частично — усильте её независимой верификацией и более детальным раскрытием."
+msgstr "The CSR strategy is partially developed — strengthen it with independent verification and more detailed disclosure."
+
+msgid "По категории «%(name)s» недостаточно раскрытых данных в анкете (менее 50%% вопросов с содержательным ответом). Вероятно, часть практик уже существует — начните систематически документировать и раскрывать данные по этой категории, прежде чем внедрять что-то новое."
+msgstr "Insufficient disclosed data in the questionnaire for the \"%(name)s\" category (less than 50%% of questions have a substantive answer). Some practices likely already exist — start systematically documenting and disclosing data for this category before implementing anything new."
+
+msgid "Вовлечённость в производство спорных видов вооружений — критический риск, требующий немедленного пересмотра бизнес-модели или сегмента деятельности."
+msgstr "Involvement in the production of controversial weapons — a critical risk requiring immediate review of the business model or activity segment."
+
+msgid "Более 30% выручки от теплового угля/нефтеносных песков — существенный риск для E-рейтинга; требуется стратегия диверсификации или декарбонизации."
+msgstr "More than 30% of revenue from thermal coal/oil sands — a significant risk to the E rating; a diversification or decarbonization strategy is needed."
+
+msgid "Системные нарушения прав человека в цепочке поставок — требуется немедленный аудит поставщиков и корректирующие меры."
+msgstr "Systemic human rights violations in the supply chain — immediate supplier audit and corrective measures are required."
+
+msgid "Крупные экологические штрафы за последние 3 года — требуется анализ первопричин и программа предотвращения повторных нарушений."
+msgstr "Major environmental fines in the past 3 years — root cause analysis and a program to prevent repeat violations are required."
+
+msgid "Коррупционные санкции в отношении руководства — требуется усиление комплаенс-контроля и пересмотр политики этики."
+msgstr "Corruption-related sanctions against management — strengthening compliance controls and reviewing ethics policy are required."
+
+msgid "Крупная утечка персональных данных — требуется аудит систем защиты данных и пересмотр политики кибербезопасности."
+msgstr "A major personal data breach — an audit of data protection systems and a review of cybersecurity policy are required."
+
+msgid "Массовые трудовые споры — требуется анализ условий труда и диалог с представителями сотрудников."
+msgstr "Mass labor disputes — an analysis of working conditions and dialogue with employee representatives are required."
+
+msgid "Отсутствие экологической политики при высокой материальности E для отрасли — приоритетный пробел, требующий немедленной разработки политики."
+msgstr "Absence of an environmental policy despite high E materiality for the industry — a priority gap requiring immediate policy development."
+
+msgid "Компания демонстрирует уровень ESG-зрелости «%(tier)s» (итоговый балл %(score)s)."
+msgstr "The company demonstrates an ESG maturity level of \"%(tier)s\" (final score %(score)s)."
+
+msgid "Сильнее всего развит столп %(strongest)s (%(strongest_score).1f баллов), наибольшего внимания требует %(weakest)s (%(weakest_score).1f баллов)."
+msgstr "The %(strongest)s pillar is the most developed (%(strongest_score).1f points), while %(weakest)s requires the most attention (%(weakest_score).1f points)."
+
+msgid "Баллы по всем трём столпам (Environment, Social, Governance) примерно на одном уровне."
+msgstr "Scores across all three pillars (Environment, Social, Governance) are at roughly the same level."
+
+msgid "⚠️ Обнаружены серьёзные контроверсии, которые ограничивают итоговую оценку — их устранение должно быть приоритетом до дальнейшего развития остальных направлений."
+msgstr "⚠️ Serious controversies have been detected that limit the final score — resolving them should be a priority before further developing other areas."
+
+msgid "Обнаружены контроверсии с умеренным влиянием на рейтинг — рекомендуется обратить на них внимание."
+msgstr "Controversies with a moderate impact on the rating have been detected — it is recommended to pay attention to them."
+
+msgid "Стр."
+msgstr "Page"
+
+msgid "из"
+msgstr "of"
+
+msgid "ESG-отчёт:"
+msgstr "ESG Report:"
+
+msgid "Отрасль:"
+msgstr "Industry:"
+
+msgid "Дата:"
+msgstr "Date:"
+
+msgid "Контроверсии — требуют внимания"
+msgstr "Controversies — require attention"
+
+msgid "Серьёзность"
+msgstr "Severity"
+
+msgid "Pillar scores"
+msgstr "Pillar scores"
+
+msgid "Category scores"
+msgstr "Category scores"
+
+msgid "Баллы по категориям"
+msgstr "Scores by Category"
+
+msgid "Топ-3 приоритетных действия"
+msgstr "Top 3 Priority Actions"
+
+msgid "баллов"
+msgstr "points"
+
+msgid "Полный роадмап рекомендаций"
+msgstr "Full Recommendations Roadmap"
+
+msgid "Нет рекомендаций в этой категории горизонта."
+msgstr "No recommendations in this timeframe category."
+
+msgid "Отчёт сгенерирован автоматически на основе самооценки ESG-калькулятора. Методология синтезирует подходы LSEG, MSCI, S&amp;P Global, Sustainalytics и Sustainable Fitch."
+msgstr "This report was generated automatically based on ESG calculator self-assessment. The methodology synthesizes approaches from LSEG, MSCI, S&amp;P Global, Sustainalytics, and Sustainable Fitch."
+

@@ -1,5 +1,5 @@
 from django.db import models
-
+from accounts.models import Company
 class Question(models.Model):
     class Block(models.TextChoices):
         E = "E", "Environmental"
