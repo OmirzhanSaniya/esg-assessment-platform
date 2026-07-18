@@ -1,0 +1,22 @@
+.dashboard { min-height: 100vh; background: var(--light); }
+
+.dashboard-nav {
+  height: 64px;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-right { display: flex; gap: 12px; }
+
+.dashboard-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
