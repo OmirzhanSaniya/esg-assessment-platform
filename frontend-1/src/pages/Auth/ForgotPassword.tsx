@@ -65,3 +65,36 @@ function SuccessState({ email }: { email: string }) {
       </div>
     );
   }
+  
+  function FormState({ email, setEmail, onSubmit }: {
+    email: string;
+    setEmail: (v: string) => void;
+    onSubmit: (e: React.FormEvent) => void;
+  }) {
+    return (
+      <>
+        <h1>Забыли пароль?</h1>
+        <p className="auth-sub">Введите email — пришлём ссылку для сброса</p>
+  
+        <form onSubmit={onSubmit}>
+          <div className="field">
+            <label>Email</label>
+            <input
+              type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="company@example.com"
+              required
+            />
+          </div>
+          <button type="submit" className="btn btn-primary auth-submit">
+            Отправить ссылку →
+          </button>
+        </form>
+  
+        <p className="auth-switch">
+          Вспомнили пароль? <Link to="/login">Войти</Link>
+        </p>
+      </>
+    );
+  } 
