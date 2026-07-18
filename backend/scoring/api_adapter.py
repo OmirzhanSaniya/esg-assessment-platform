@@ -10,7 +10,7 @@ api_adapter.py — адаптер между нашей ESG-методологи
 из esg_config.py напрямую в Response().
 """
 
-from esg_config import CATEGORY_PILLAR
+from .esg_config import CATEGORY_PILLAR
 
 
 # ============================================================
