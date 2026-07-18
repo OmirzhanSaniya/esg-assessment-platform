@@ -24,7 +24,7 @@ from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 from weasyprint import HTML
 
-from esg_config import CATEGORY_NAMES, TIERS
+from .esg_config import CATEGORY_NAMES, TIERS
 
 
 # ============================================================
