@@ -48,3 +48,20 @@ export default function ForgotPassword() {
     </div>
   );
 }
+/* ── Sub-components ── */
+
+function SuccessState({ email }: { email: string }) {
+    return (
+      <div style={{ textAlign: 'center', padding: '40px 0' }}>
+        <div style={{ fontSize: 52, marginBottom: 20 }}>📧</div>
+        <h1 style={{ fontSize: 24, fontWeight: 800, marginBottom: 10 }}>Письмо отправлено!</h1>
+        <p style={{ color: '#64748B', marginBottom: 28, lineHeight: 1.6 }}>
+          Мы отправили ссылку на <strong>{email}</strong>.
+          Проверьте почту и следуйте инструкциям.
+        </p>
+        <Link to="/login" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+          Вернуться ко входу
+        </Link>
+      </div>
+    );
+  }
