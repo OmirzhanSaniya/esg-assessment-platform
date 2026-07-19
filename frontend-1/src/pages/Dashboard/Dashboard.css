@@ -20,3 +20,21 @@
   margin: 0 auto;
   padding: 32px 24px;
 }
+/* Header */
+
+.dash-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+  .dash-header h1 { margin-bottom: 6px; font-size: 28px; font-weight: 800; }
+  
+  .industry-tag {
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: #ecfdf5;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-dark);
+  }
