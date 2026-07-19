@@ -121,4 +121,36 @@
     border-radius: var(--radius);
   }
   .empty-card p { margin-bottom: 16px; font-size: 16px; }
+/* History */
+
+.history-section {
+    padding: 28px;
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .history-section h2 { margin-bottom: 20px; font-size: 18px; font-weight: 700; }
+  .empty-text { color: var(--gray); }
   
+  .history-table { width: 100%; border-collapse: collapse; }
+  
+  .history-table th {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gray);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .history-table td {
+    padding: 12px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .history-table tr:last-child td { border-bottom: none; }
+  
+  .btn-sm { padding: 6px 14px; font-size: 13px; }
