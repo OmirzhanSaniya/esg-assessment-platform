@@ -31,3 +31,24 @@ const DEFAULT_LEVEL_COLOR = '#6B7280';
 function getLevelColor(level: string): string {
   return LEVEL_COLORS[level] ?? DEFAULT_LEVEL_COLOR;
 }
+/* ---------------------------------------------------------------- */
+
+function LevelBadge({ level }: { level: string }) {
+    return (
+      <span className="level-badge" style={{ background: getLevelColor(level) }}>
+        {level}
+      </span>
+    );
+  }
+  
+  function ScoreCircle({ block, value }: { block: EsgBlock; value: number }) {
+    return (
+      <div className="score-block">
+        <div className="score-circle" style={{ '--pct': `${value}%` } as React.CSSProperties}>
+          <span>{value}</span>
+        </div>
+        <p>{BLOCK_LABELS[block]}</p>
+      </div>
+    );
+  }
+  
