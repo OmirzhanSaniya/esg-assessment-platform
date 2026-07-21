@@ -98,3 +98,38 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* How it works */}
+      <section className="section-how">
+        <div className="container">
+          <p className="section-label">Как это работает</p>
+          <h2 className="section-title">Три шага до ESG рейтинга</h2>
+          <p className="section-sub">Простой процесс — от регистрации до готового отчёта</p>
+          <div className="steps-grid">
+            <div className="step-item">
+              <span className="step-number">01</span>
+              <div className="step-icon green">
+                <UserPlus size={22} color="#16A34A" />
+              </div>
+              <h3>Регистрация</h3>
+              <p>Создайте аккаунт компании — название, отрасль, email</p>
+            </div>
+            <div className="step-item">
+              <span className="step-number">02</span>
+              <div className="step-icon purple">
+                <ClipboardList size={22} color="#7C3AED" />
+              </div>
+              <h3>Анкета</h3>
+              <p>Ответьте на вопросы по блокам E, S и G</p>
+            </div>
+            <div className="step-item">
+              <span className="step-number">03</span>
+              <div className="step-icon blue">
+                <BarChart3 size={22} color="#2563EB" />
+              </div>
+              <h3>Рейтинг</h3>
+              <p>Получите ESG-балл, уровень компании и роадмап</p>
+            </div>
+          </div>
+        </div>
+      </section>
