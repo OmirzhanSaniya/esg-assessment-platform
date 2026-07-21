@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { UserPlus, ClipboardList, BarChart3, Leaf, Users, Shield, FileText, Map, Building2 } from 'lucide-react';
+import { UserPlus, ClipboardList, BarChart3, Leaf, FileText, Map, Building2 } from 'lucide-react';
 import { useCounter } from '../../hooks/useCounter';
 
 export default function Home() {
