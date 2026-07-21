@@ -538,3 +538,34 @@
    /* Question invalid state */
    .question-item.invalid { background: rgba(239,68,68,.02); border-left: 3px solid #EF4444; padding-left: calc(32px - 3px); }
    
+   /* ============================================
+      RESPONSIVE
+      ============================================ */
+   
+      @media (max-width: 1024px) {
+        .hero-content    { grid-template-columns: 1fr; gap: 48px; }
+        .hero-right      { display: none; }
+        .benefits-grid   { grid-template-columns: 1fr 1fr; }
+      }
+      
+      @media (max-width: 768px) {
+        .steps-grid              { grid-template-columns: 1fr; }
+        .benefits-grid           { grid-template-columns: 1fr; }
+        .scores-row              { gap: 24px; }
+        .score-divider           { display: none; }
+        .dash-header             { flex-direction: column; }
+        .cta-inner               { padding: 48px 32px; }
+        .cta-actions             { flex-direction: column; align-items: center; }
+        .progress-step .step-dot-label { display: none; }
+        .question-item,
+        .block-title,
+        .block-subtitle          { padding-left: 20px; padding-right: 20px; }
+        .assessment-nav-btns     { padding: 16px 20px; }
+        .navbar,
+        .dash-nav,
+        .assessment-nav          { padding: 0 20px; }
+        .nav-links .btn-outline  { display: none; }
+        .auth-page               { grid-template-columns: 1fr; }
+        .auth-left               { display: none; }
+        .auth-right              { padding: 32px 24px; align-items: flex-start; padding-top: 80px; }
+      }
