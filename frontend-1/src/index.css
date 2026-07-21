@@ -251,4 +251,16 @@
     0%,100% { opacity: 1; transform: scale(1); }
     50%      { opacity: .5; transform: scale(.8); }
   }
-  
+
+   /* Hero text */
+   .hero-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(44px, 5.5vw, 72px); font-weight: 800;
+    line-height: 1.05; letter-spacing: -.04em; color: var(--navy); margin-bottom: 24px;
+  }
+  .hero-title .accent {
+    background: linear-gradient(135deg, var(--green), var(--purple));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero-desc { font-size: 18px; color: var(--gray); line-height: 1.75; max-width: 480px; margin-bottom: 40px; }
+  .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
