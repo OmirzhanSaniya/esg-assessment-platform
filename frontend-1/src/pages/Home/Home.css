@@ -1,0 +1,103 @@
+/* ============================================
+   ESG ASSESSMENT PLATFORM — GLOBAL STYLES
+   ============================================ */
+
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@700;800&display=swap');
+
+   *,
+   *::before,
+   *::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+   
+   :root {
+     /* Brand colors */
+     --green: #22c55e;
+     --green-light: #86efac;
+     --green-dark: #16a34a;
+     --purple: #a78bfa;
+     --purple-dark: #7c3aed;
+     --yellow: #fde68a;
+     --blue: #93c5fd;
+   
+     /* Neutrals */
+     --navy: #0f172a;
+     --navy-mid: #1e293b;
+     --gray: #64748b;
+     --gray-light: #94a3b8;
+     --border: #e2e8f0;
+     --white: #ffffff;
+     --off-white: #f8fafc;
+   
+     /* Radii */
+     --radius-sm: 8px;
+     --radius: 16px;
+     --radius-lg: 24px;
+   
+     /* Shadows */
+     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+     --shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+     --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.06);
+   }
+   
+   html {
+     scroll-behavior: smooth;
+   }
+   
+   body {
+     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+     color: var(--navy);
+     background: var(--white);
+     line-height: 1.6;
+     -webkit-font-smoothing: antialiased;
+   }
+   
+   /* Decorative floating blobs behind all pages */
+   body::before,
+   body::after {
+     content: '';
+     position: fixed;
+     border-radius: 50%;
+     pointer-events: none;
+     filter: blur(80px);
+     z-index: -1;
+     will-change: transform;
+   }
+   
+   body::before {
+     width: 50vw;
+     height: 50vw;
+     top: -15vh;
+     right: -10vw;
+     background: radial-gradient(circle, rgba(134, 239, 172, 0.55) 0%, rgba(34, 197, 94, 0.15) 45%, transparent 65%);
+     animation: blobA 9s ease-in-out infinite;
+   }
+   
+   body::after {
+     width: 45vw;
+     height: 45vw;
+     bottom: -15vh;
+     left: -10vw;
+     background: radial-gradient(circle, rgba(196, 181, 253, 0.55) 0%, rgba(139, 92, 246, 0.15) 45%, transparent 65%);
+     animation: blobB 11s ease-in-out infinite 1.5s;
+   }
+   
+   @keyframes blobA {
+     0%,
+     100% { transform: translate(0, 0) scale(1); }
+     20%  { transform: translate(-3vw, 4vh) scale(1.06); }
+     40%  { transform: translate(2vw, -5vh) scale(0.94); }
+     60%  { transform: translate(4vw, 3vh) scale(1.04); }
+     80%  { transform: translate(-2vw, -3vh) scale(0.97); }
+   }
+   
+   @keyframes blobB {
+     0%,
+     100% { transform: translate(0, 0) scale(1); }
+     25%  { transform: translate(4vw, -4vh) scale(1.05); }
+     50%  { transform: translate(-3vw, 5vh) scale(0.95); }
+     75%  { transform: translate(2vw, -2vh) scale(1.03); }
+   }
+   
