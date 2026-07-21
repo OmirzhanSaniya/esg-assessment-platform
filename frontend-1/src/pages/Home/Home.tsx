@@ -133,3 +133,42 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Benefits */}
+      <section className="section-benefits">
+        <div className="container">
+          <p className="section-label">Что вы получите</p>
+          <h2 className="section-title">Полный ESG анализ</h2>
+          <p className="section-sub">Всё что нужно для понимания и улучшения ESG показателей</p>
+          <div className="benefits-grid">
+            <div className="benefit-card">
+              <div className="benefit-icon-wrap green">
+                <Leaf size={26} color="#16A34A" />
+              </div>
+              <h3>ESG-рейтинг</h3>
+              <p>Баллы по каждому блоку E, S, G и итоговый результат от 0 до 100</p>
+            </div>
+            <div className="benefit-card">
+              <div className="benefit-icon-wrap purple">
+                <Map size={26} color="#7C3AED" />
+              </div>
+              <h3>Роадмап</h3>
+              <p>Конкретные шаги и рекомендации для улучшения каждого показателя</p>
+            </div>
+            <div className="benefit-card">
+              <div className="benefit-icon-wrap blue">
+                <FileText size={26} color="#2563EB" />
+              </div>
+              <h3>PDF-отчёт</h3>
+              <p>Скачайте полный отчёт и получите его на email автоматически</p>
+            </div>
+            <div className="benefit-card">
+              <div className="benefit-icon-wrap yellow">
+                <Building2 size={26} color="#D97706" />
+              </div>
+              <h3>Личный кабинет</h3>
+              <p>История всех оценок, динамика прогресса и сравнение результатов</p>
+            </div>
+          </div>
+        </div>
+      </section>
