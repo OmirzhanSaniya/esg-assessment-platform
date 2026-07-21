@@ -810,3 +810,12 @@
     justify-content: center;
     gap: 14px;
   } 
+  /* --- Footer --- */
+   
+  .footer {
+    padding: 32px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 14px;
+    color: var(--gray-light);
+  }
