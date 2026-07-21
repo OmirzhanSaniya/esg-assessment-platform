@@ -140,4 +140,16 @@
    .field input::placeholder { color: var(--gray-light); }
    
    .error-msg { color: #EF4444; font-size: 13px; margin-top: 8px; display: flex; align-items: center; gap: 4px; }
-   
+ 
+   /* ── Loading ── */
+   .loading {
+    display: flex; align-items: center; justify-content: center;
+    height: 100vh; font-size: 16px; color: var(--gray); gap: 12px;
+  }
+  .loading::before {
+    content: ''; width: 20px; height: 20px;
+    border: 2px solid var(--border); border-top-color: var(--green);
+    border-radius: 50%; animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  
