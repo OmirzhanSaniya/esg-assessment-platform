@@ -24,6 +24,8 @@ interface Question {
   block: Block;
   type: QuestionType;
   order: number;
+  is_controversy?: boolean;
+  severity?: 1 | 2 | 3 | 4;
 }
 
 const MOCK_QUESTIONS: Question[] = [
