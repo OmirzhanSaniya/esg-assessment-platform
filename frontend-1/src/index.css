@@ -464,4 +464,44 @@
    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--green-dark)); border-radius: 100px; transition: width .5s cubic-bezier(.4,0,.2,1); }
    .progress-label { display: flex; justify-content: space-between; font-size: 13px; color: var(--gray); }
    .progress-pct   { font-weight: 700; color: var(--green-dark); }
+
+   /* Questions */
+   .questions-card { background: var(--white); border-radius: var(--r-lg); border: 1.5px solid var(--border); overflow: hidden; margin-top: 24px; box-shadow: var(--sh-sm); }
    
+   .block-title { display: flex; align-items: center; gap: 12px; padding: 24px 32px; border-bottom: 1px solid var(--border); font-size: 18px; font-weight: 700; color: var(--navy); background: linear-gradient(135deg, rgba(34,197,94,.03), rgba(167,139,250,.03)); }
+   .block-subtitle { padding: 0 32px 20px; font-size: 13px; color: var(--gray); border-bottom: 1px solid var(--border); }
+   .block-badge { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; color: white; flex-shrink: 0; }
+   .block-badge.E { background: linear-gradient(135deg, #22C55E, #16A34A); }
+   .block-badge.S { background: linear-gradient(135deg, #A78BFA, #7C3AED); }
+   .block-badge.G { background: linear-gradient(135deg, #60A5FA, #2563EB); }
+   
+   .question-item   { padding: 24px 32px; border-bottom: 1px solid var(--border); }
+   .question-item:last-of-type { border-bottom: none; }
+   .q-index         { color: var(--green); margin-right: 6px; font-weight: 700; }
+   .question-text   { font-size: 15px; font-weight: 600; color: var(--navy); line-height: 1.5; margin-bottom: 16px; }
+   .question-required { color: #EF4444; margin-left: 3px; }
+   .question-hint   { font-size: 13px; color: var(--gray-light); margin-bottom: 12px; }
+   .question-error  { font-size: 13px; color: #EF4444; margin-top: 10px; display: flex; align-items: center; gap: 6px; }
+   .empty-text      { padding: 32px; color: var(--gray); text-align: center; }
+
+  /* Answer types */
+  .yesno-row   { display: flex; gap: 10px; }
+  .yesno-btn   { padding: 10px 28px; border-radius: var(--r-sm); border: 1.5px solid var(--border); cursor: pointer; font-size: 14px; font-weight: 600; background: white; color: var(--navy); transition: all .15s; }
+  .yesno-btn.yes.selected { background: rgba(34,197,94,.08); border-color: var(--green); color: var(--green-dark); }
+  .yesno-btn.no.selected  { background: rgba(239,68,68,.06); border-color: #EF4444; color: #DC2626; }
+  .yesno-btn:hover        { border-color: var(--green); }
+  
+  .options-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .option-btn  { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: var(--r-sm); border: 1.5px solid var(--border); cursor: pointer; font-size: 14px; font-weight: 500; color: var(--navy); background: white; transition: all .15s; user-select: none; }
+  .option-btn:hover    { border-color: var(--green); color: var(--green-dark); background: rgba(34,197,94,.04); }
+  .option-btn.selected { background: rgba(34,197,94,.08); border-color: var(--green); color: var(--green-dark); font-weight: 600; }
+  .option-btn input    { display: none; }
+  .option-check        { width: 15px; height: 15px; border-radius: 50%; border: 2px solid var(--border); flex-shrink: 0; }
+  
+  .scale-row    { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+  .scale-btn    { width: 46px; height: 46px; border-radius: var(--r-sm); border: 1.5px solid var(--border); background: white; font-size: 16px; font-weight: 700; color: var(--gray); cursor: pointer; transition: all .15s; }
+  .scale-btn:hover    { border-color: var(--green); color: var(--green); }
+  .scale-btn.selected { background: var(--green); border-color: var(--green); color: white; box-shadow: 0 4px 12px rgba(34,197,94,.3); }
+  .scale-labels { display: flex; justify-content: space-between; font-size: 12px; color: var(--gray-light); }
+  .scale-slider-wrap  { margin-top: 8px; }
+  .scale-slider       { width: 100%; accent-color: var(--green); }
