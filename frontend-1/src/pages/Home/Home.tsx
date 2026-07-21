@@ -172,3 +172,25 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* CTA */}
+      <section className="section-cta">
+        <div className="container">
+          <div className="cta-inner">
+            <h2>Готовы узнать ESG рейтинг вашей компании?</h2>
+            <p>Регистрация бесплатна — займёт меньше минуты</p>
+            <div className="cta-actions">
+              <Link to="/register" className="btn btn-primary btn-lg">Начать бесплатно →</Link>
+              <Link to="/login" className="btn btn-ghost btn-lg">Уже есть аккаунт</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>© 2025 ESG Campus КБТУ — Алматы, Казахстан</p>
+      </footer>
+    </div>
+  );
+}
