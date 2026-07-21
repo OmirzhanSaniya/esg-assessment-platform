@@ -171,4 +171,49 @@
         opacity: 0.5;
         cursor: not-allowed;
         transform: none !important;
-      }         
+      }  
+   /* ============================================
+      FORMS
+      ============================================ */
+   
+      .field { margin-bottom: 20px; }
+   
+      .field label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        color: var(--navy-mid);
+      }
+      
+      .field input,
+      .field select {
+        width: 100%;
+        padding: 13px 16px;
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius-sm);
+        font: inherit;
+        font-size: 15px;
+        color: var(--navy);
+        background: var(--white);
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      
+      .field input:focus,
+      .field select:focus {
+        border-color: var(--green);
+        box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+      }
+      
+      .field input::placeholder { color: var(--gray-light); }
+      
+      .error-msg {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 8px;
+        font-size: 13px;
+        color: #ef4444;
+      }       
