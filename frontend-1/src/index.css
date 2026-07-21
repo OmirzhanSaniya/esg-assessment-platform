@@ -534,4 +534,7 @@
    .assessment-nav-title { font-size: 14px; font-weight: 600; color: var(--navy); }
    .assessment-exit-btn  { font-size: 13px; color: var(--gray); background: none; border: none; cursor: pointer; font-family: inherit; }
    .assessment-exit-btn:hover { color: var(--navy); }
+
+   /* Question invalid state */
+   .question-item.invalid { background: rgba(239,68,68,.02); border-left: 3px solid #EF4444; padding-left: calc(32px - 3px); }
    
