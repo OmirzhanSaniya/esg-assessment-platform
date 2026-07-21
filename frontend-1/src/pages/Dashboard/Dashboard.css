@@ -1,0 +1,156 @@
+.dashboard { min-height: 100vh; background: var(--light); }
+
+.dashboard-nav {
+  height: 64px;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-right { display: flex; gap: 12px; }
+
+.dashboard-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+/* Header */
+
+.dash-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+  .dash-header h1 { margin-bottom: 6px; font-size: 28px; font-weight: 800; }
+  
+  .industry-tag {
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: #ecfdf5;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-dark);
+  }
+/* Score card */
+
+.score-card {
+    padding: 28px;
+    margin-bottom: 24px;
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .score-card h2 { margin-bottom: 24px; font-size: 18px; font-weight: 700; }
+  
+  .scores-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  .score-block { text-align: center; }
+  
+  .score-circle {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: conic-gradient(var(--green) var(--pct), #e5e7eb 0);
+  }
+  .score-circle::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+  }
+  .score-circle span {
+    position: relative;
+    z-index: 1;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--navy);
+  }
+  
+  .score-block p { font-size: 12px; font-weight: 600; color: var(--gray); }
+  
+  .score-total { margin-left: 16px; text-align: center; }
+  .total-num {
+    display: block;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--navy);
+  }
+  .total-label {
+    display: block;
+    margin: 4px 0 8px;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  
+  .level-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+  }
+ /* Empty state */
+
+.empty-card {
+    padding: 48px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: var(--gray);
+    background: white;
+    border: 1.5px dashed var(--border);
+    border-radius: var(--radius);
+  }
+  .empty-card p { margin-bottom: 16px; font-size: 16px; }
+/* History */
+
+.history-section {
+    padding: 28px;
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .history-section h2 { margin-bottom: 20px; font-size: 18px; font-weight: 700; }
+  .empty-text { color: var(--gray); }
+  
+  .history-table { width: 100%; border-collapse: collapse; }
+  
+  .history-table th {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gray);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .history-table td {
+    padding: 12px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .history-table tr:last-child td { border-bottom: none; }
+  
+  .btn-sm { padding: 6px 14px; font-size: 13px; }
