@@ -144,14 +144,15 @@ export default function Assessment() {
               const severityClass = isFlag && q.severity ? SEVERITY_CLASS[q.severity] : '';
 
               return (
-              <div key={q.id} className={`question-item ${isFlag ? `question-flag ${severityClass}` : ''}`}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span className="question-num">Вопрос {idx + 1}</span>
+                <div key={q.id} className={`question-item ${isFlag ? `is-flag ${severityClass}` : ''}`}>
+                <div>
                   {isFlag && (
                     <span className={`flag-badge ${severityClass}`}>
-                      ⚠️ {q.severity ? SEVERITY_LABEL[q.severity] : 'Красный флаг'}
+                      <span className="flag-badge-icon">⚠️</span>
+                      {q.severity ? SEVERITY_LABEL[q.severity] : 'Красный флаг'}
                     </span>
                   )}
+                  <span className="question-num">Вопрос {idx + 1}</span>
                 </div>
                 <p className="question-text">{q.text}</p>
 
