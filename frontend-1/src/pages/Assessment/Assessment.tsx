@@ -42,6 +42,7 @@ const MOCK_QUESTIONS: Question[] = [
   { id: 11, text: 'Оцените уровень прозрачности управления компанией', block: 'G', type: 'scale', order: 3 },
   { id: 12, text: 'Публикуете ли вы отчёты о деятельности компании?', block: 'G', type: 'yes_no', order: 4 },
   { id: 13, text: 'Какая доля выручки от «зелёных» продуктов?', block: 'E', type: 'percentage', order: 5 },
+  { id: 14, text: 'Тест красного флага', block: 'E', type: 'yes_no', order: 6, is_controversy: true, severity: 2 },
 
 ];
 
@@ -146,13 +147,15 @@ export default function Assessment() {
               return (
                 <div key={q.id} className={`question-item ${isFlag ? `is-flag ${severityClass}` : ''}`}>
                 <div>
-                  {isFlag && (
+                {isFlag && (
+                  <div style={{ marginBottom: 10 }}>
                     <span className={`flag-badge ${severityClass}`}>
                       <span className="flag-badge-icon">⚠️</span>
                       {q.severity ? SEVERITY_LABEL[q.severity] : 'Красный флаг'}
                     </span>
-                  )}
-                  <span className="question-num">Вопрос {idx + 1}</span>
+                  </div>
+                )}
+                <span className="question-num">Вопрос {idx + 1}</span>
                 </div>
                 <p className="question-text">{q.text}</p>
 
