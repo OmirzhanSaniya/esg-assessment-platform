@@ -516,4 +516,7 @@
   .nav-btn.submit:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(34,197,94,.35); }
   .nav-btn:disabled    { opacity: .5; cursor: not-allowed; transform: none !important; }
   .spinner             { width: 14px; height: 14px; border: 2px solid rgba(255,255,255,.4); border-top-color: white; border-radius: 50%; animation: spin .7s linear infinite; display: inline-block; margin-right: 6px; }
-  
+
+   /* Skeleton loading */
+   .question-skeleton { height: 18px; background: linear-gradient(90deg, var(--border) 25%, var(--off-white) 50%, var(--border) 75%); background-size: 200% 100%; border-radius: 6px; margin: 16px 32px; animation: shimmer 1.5s infinite; }
+   @keyframes shimmer { to { background-position: -200% 0; } }
