@@ -59,6 +59,20 @@ const FREQUENCY_OPTIONS = [
 
 const SCALE_VALUES = [1, 2, 3, 4, 5];
 
+const SEVERITY_CLASS: Record<number, string> = {
+  1: 'sev-1',
+  2: 'sev-2',
+  3: 'sev-3',
+  4: 'sev-4',
+};
+
+const SEVERITY_LABEL: Record<number, string> = {
+  1: 'Низкий риск',
+  2: 'Средний риск',
+  3: 'Высокий риск',
+  4: 'Критический риск',
+};
+
 export default function Assessment() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
@@ -125,9 +139,20 @@ export default function Assessment() {
           </div>
 
           <div className="questions-list">
-            {blockQuestions.map((q, idx) => (
-              <div key={q.id} className="question-item">
-                <span className="question-num">Вопрос {idx + 1}</span>
+          {blockQuestions.map((q, idx) => {
+              const isFlag = !!q.is_controversy;
+              const severityClass = isFlag && q.severity ? SEVERITY_CLASS[q.severity] : '';
+
+              return (
+              <div key={q.id} className={`question-item ${isFlag ? `question-flag ${severityClass}` : ''}`}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <span className="question-num">Вопрос {idx + 1}</span>
+                  {isFlag && (
+                    <span className={`flag-badge ${severityClass}`}>
+                      ⚠️ {q.severity ? SEVERITY_LABEL[q.severity] : 'Красный флаг'}
+                    </span>
+                  )}
+                </div>
                 <p className="question-text">{q.text}</p>
 
                 {q.type === 'yes_no' && (
@@ -196,7 +221,9 @@ export default function Assessment() {
                   </div>
                 )}
               </div>
-            ))}
+              );
+              })}
+            
           </div>
 
           <div className="assessment-footer">
