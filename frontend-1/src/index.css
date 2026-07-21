@@ -325,3 +325,21 @@
    .step-icon.blue   { background: rgba(96,165,250,.1); }
    .step-item h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; letter-spacing: -.02em; }
    .step-item p  { font-size: 15px; color: var(--gray); line-height: 1.65; }
+
+  /* Benefits */
+  .section-benefits { padding: 80px 0 100px; background: var(--off-white); position: relative; overflow: hidden; }
+  .section-benefits::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(253,230,138,.3) 0%, transparent 70%); top: -100px; right: -100px; border-radius: 50%; pointer-events: none; }
+  
+  .benefits-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+  .benefit-card { background: var(--white); border-radius: var(--r-lg); padding: 36px; border: 1.5px solid var(--border); transition: all .3s cubic-bezier(.4,0,.2,1); position: relative; overflow: hidden; }
+  .benefit-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(34,197,94,.03), rgba(167,139,250,.03)); opacity: 0; transition: opacity .3s; }
+  .benefit-card:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); border-color: rgba(34,197,94,.3); }
+  .benefit-card:hover::before { opacity: 1; }
+  .benefit-icon-wrap { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .benefit-icon-wrap.green  { background: linear-gradient(135deg, rgba(34,197,94,.15), rgba(134,239,172,.15)); }
+  .benefit-icon-wrap.purple { background: linear-gradient(135deg, rgba(167,139,250,.15), rgba(196,181,253,.15)); }
+  .benefit-icon-wrap.blue   { background: linear-gradient(135deg, rgba(96,165,250,.15), rgba(147,197,253,.15)); }
+  .benefit-icon-wrap.yellow { background: linear-gradient(135deg, rgba(253,230,138,.3), rgba(252,211,77,.2)); }
+  .benefit-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; letter-spacing: -.02em; }
+  .benefit-card p  { font-size: 15px; color: var(--gray); line-height: 1.65; }
+  
