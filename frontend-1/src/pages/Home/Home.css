@@ -100,4 +100,17 @@
      50%  { transform: translate(-3vw, 5vh) scale(0.95); }
      75%  { transform: translate(2vw, -2vh) scale(1.03); }
    }
+ /* ============================================
+      UTILITY
+      ============================================ */
    
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      
+      @media (max-width: 768px) {
+        .container { padding: 0 20px; }
+      }
+         
