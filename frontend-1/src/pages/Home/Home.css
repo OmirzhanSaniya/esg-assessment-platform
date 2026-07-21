@@ -249,3 +249,39 @@
       ============================================ */
    
       .home { min-height: 100vh; overflow-x: hidden; }      
+ /* --- Navbar --- */
+   
+ .navbar {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 200;
+    height: 68px;
+    padding: 0 32px;
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: background 0.3s;
+  }
+  
+  .navbar-inner {
+    max-width: 1120px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-family: 'Sora', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    text-decoration: none;
+  }
+  .logo span { color: var(--green); }
+  
+  .nav-links { display: flex; align-items: center; gap: 10px; }
+  
